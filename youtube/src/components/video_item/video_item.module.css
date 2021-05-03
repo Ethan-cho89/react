@@ -17,7 +17,7 @@
   transform: scale(1.02);
 }
 
-.thumbnail P {
+.thumbnail {
   width: 40%;
   height: 100%;
 }

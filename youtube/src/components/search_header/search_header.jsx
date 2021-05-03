@@ -1,7 +1,22 @@
-import React from "react";
-import styles from "./search_header.module.css";
+import React, { useRef } from 'react';
+import styles from './search_header.module.css';
 
-const SearchHeader = (props) => {
+const SearchHeader = ({ onSearch }) => {
+  // const keyRef = React.createRef(); 이게 아니라 useRef()
+  const inputRef = useRef();
+
+  const handleSearch = () => {
+    onSearch(inputRef.current.value);
+  };
+
+  const onClick = () => {
+    handleSearch();
+  };
+  const onKeyPress = (e) => {
+    if (e.key === 'Enter') {
+      handleSearch();
+    }
+  };
   return (
     <header className={styles.header}>
       <div className={styles.logo}>
@@ -12,8 +27,10 @@ const SearchHeader = (props) => {
         type="search"
         className={styles.inputbox}
         placeholder="Search..."
+        ref={inputRef}
+        onKeyPress={onKeyPress}
       ></input>
-      <button type="submit" className={styles.search}>
+      <button type="submit" className={styles.search} onClick={onClick}>
         <img
           src="./images/search.png"
           className={styles.searchImg}

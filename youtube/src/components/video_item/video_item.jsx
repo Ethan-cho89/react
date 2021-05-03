@@ -1,5 +1,5 @@
-import React from "react";
-import styles from "./video_item.module.css";
+import React from 'react';
+import styles from './video_item.module.css';
 
 const VideoItem = ({ video: { snippet } }) => {
   //deconstruction으로 props안에 video가 있으면 바로 쓸수 있다
@@ -11,7 +11,7 @@ const VideoItem = ({ video: { snippet } }) => {
         <img
           className={styles.thumbnail}
           src={snippet.thumbnails.medium.url}
-          alt="videoThumbnail"
+          alt="video Thumbnail"
         ></img>
         <div className={styles.metadata}>
           <p className={styles.title}>{snippet.title}</p>
