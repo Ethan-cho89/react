@@ -9,6 +9,8 @@ class YoutubeServer {
     this.youtube = httpClient;
   }
 
+  //스피너로 로딩화면 만들어보세요
+
   async mostPopular() {
     const response = await this.youtube.get("videos", {
       params: {
@@ -29,7 +31,11 @@ class YoutubeServer {
         q: query,
       },
     });
-    return response.data.items;
+
+    return response.data.items.map((item) => ({
+      ...item,
+      id: item.id.videoId,
+    }));
   }
 }
 

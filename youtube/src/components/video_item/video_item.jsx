@@ -20,6 +20,7 @@ const VideoItem = memo(
             src={snippet.thumbnails.medium.url}
             alt="video Thumbnail"
           ></img>
+          {/* 웹페이지에서 직접보이지 않는 웹페이지 정보 or 데이터에 대한 데이터*/}
           <div className={styles.metadata}>
             <p className={styles.title}>{snippet.title}</p>
             <p className={styles.channel}>{snippet.channelTitle}</p>

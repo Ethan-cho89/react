@@ -14,6 +14,7 @@ function App({ youtube }) {
   //App이 함수 컴포넌트이기 때문에 매번 호출될때마다 그 안에 선언된 함수들도 새롭게 만들어져서
   //다른 컴포넌트에게 새로운 값들을 전달하므로 memo나 pureComponent가 제대로 동작하지 않는다
   //그럴땐 useCallback을 사용한다.
+  //useCallback을 쓰면 메모리에 항상 저장하기 때문에 써야할 때에만 쓰는것이 좋다.
   const search = useCallback(
     (query) => {
       youtube
