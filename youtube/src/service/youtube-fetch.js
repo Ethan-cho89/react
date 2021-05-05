@@ -1,13 +1,16 @@
+class YoutubeServer {
+  // axios를 사용해 봅시다
+  // fetch 대용으로 사용할 수 있는 라이브러리 입니다.
+  // axios는 결과를 일일이 변환하지 않아도 됩니다.
 
-class YoutubeServer{
-  constructor(key){
-    this.key=key;
+  constructor(key) {
+    this.key = key;
     this.getRequestOptions = {
-      method: 'GET',
-      redirect: 'follow',
+      method: "GET",
+      redirect: "follow",
     };
   }
-  
+
   async mostPopular() {
     const response = await fetch(
       `https://www.googleapis.com/youtube/v3/videos?part=snippet&chart=mostPopular&maxResults=10&key=${this.key}`,
@@ -23,7 +26,7 @@ class YoutubeServer{
       this.getRequestOptions
     );
     const result = await response.json();
-    return result.items.map(item => ({ ...item, id: item.id.videoId }));
+    return result.items.map((item) => ({ ...item, id: item.id.videoId }));
   }
 }
 
