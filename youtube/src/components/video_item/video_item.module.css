@@ -1,12 +1,12 @@
-.container {
+.container { /*비디오 아이템 하나 하나를 싸고 있는 요소*/
   padding: 0.2em;
 }
 
-.container.grid {
+.container.grid { /* 선택된게 없으니 두줄로 보여주겠다 */
   width: 50%;
 }
 
-.container.list {
+.container.list { /* 선택된것이 있으니 한줄로 보여주겠다 */
   width: 100%;
 }
 
@@ -14,7 +14,7 @@
   display: flex;
   align-items: center;
   border: 1px solid lightgray;
-  margin-bottom: 0.2em;
+  margin-bottom: 0.1em;
   height: 100%;
   display: flex;
   box-shadow: 3px 3px 5px 0px rgba(191, 191, 191, 0.53);
